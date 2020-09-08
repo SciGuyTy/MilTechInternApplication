@@ -3,5 +3,5 @@ This is the web application that is accompanying my application for the VID MilT
 
 # Building Docker Image
 Feel free to run the project as a container in Docker. For the sake of continuity, here are the commands I used to build and run the image:
-"docker build -t vid-internship ."
-"docker run -dp 80:80 vid-internship"
+1. "docker build -t vid-internship ."
+2. "docker run -dp 80:80 vid-internship"
