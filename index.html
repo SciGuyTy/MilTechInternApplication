@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Users</title>
+        <!-- JQuery to make life easier -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Google Material icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="ex1.css">
+
+        <!-- Mustache -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"
+            type="text/javascript"
+        ></script>
+        
+    </head>
+    <body>
+        <!-- Basic HTML for the landing page -->
+        <div id="landing">
+            <div id="userCardContainer"></div>
+            <div id="bg">
+                <div id="left"></div>
+                <div id="leftShadow"></div>
+                <div id="right"></div>
+                <div id="rightShadow"></div>
+            </div>
+            
+            <div class="container text-center" id="header">
+                <h1 class="display-1 text-center">Users</h1>
+                <hr />
+                <div class="h6 text-center">Developed by Tyler Koon</div>
+            </div>
+            <div id="tableContainer" class="container d-flex justify-content-center table-responsive"></div>
+            
+        </div>
+    </body>
+
+    <!-- This is a template script (i.e it won't show up on the page)-->
+    <script id="tableTemplate" type="text/template">
+        <table id="table" class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    {{#buttons}}
+                    <th class="stickyColumn"><button class="btnTh" id="btnName"><span id="sortNameIcon" class="material-icons">{{icnName}}</span>Name</button></th>
+                    <th class="stickyColumn"><button class="btnTh" id="btnEmail"><span id="sortNameIcon" class="material-icons">{{icnEmail}}</span>Email</button></th>
+                    {{/buttons}}
+                    <th class="stickyColumn"><button class="btnTh">Phone</button></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {{#users}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{phone}}</td>
+                </tr>
+                {{/users}}
+            <tbody>
+        </table>
+    </script>
+
+    <!-- Template for the user cards -->
+    <script id="userCardTemplate" type="text/template">
+        <div id="userCard">
+            {{#user}}
+            <div class="card">
+                <div class="text-center">
+                    <img class="userProfilePicture" src="https://cdn.onlinewebfonts.com/svg/img_191958.png" alt="User profile picture"/>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">@{{username}}</h6>
+                    <p class="card-text text-center">While working at {{company.name}}, I did some really cool and applicable things. For example, I built a cool web application.</p>
+                </div>
+            </div>
+            {{/user}}
+        </div>
+    </script>
+    
+    <script src="./ex1.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

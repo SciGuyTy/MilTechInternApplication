@@ -1,0 +1,188 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(rgb(56, 103, 141), rgb(44, 83, 100));
+    background-size: 100vw 100vh;
+    -webkit-animation: gradient 15s ease infinite;
+    -moz-animation: gradient 15s ease infinite;
+    -ms-animation: gradient 15s ease infinite;
+    -o-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#header {
+    color: rgb(255, 255 ,255);
+}
+
+hr {
+    width: 100px;
+    background-color: rgb(255, 255 ,255);
+}
+
+#tableContainer {
+    z-index: 10;
+    position: relative;
+    margin-top: 50px;
+    padding: 0;
+    width: 1000px;
+    bottom: 10px;
+    height: auto;
+    max-height: 65vh;
+    background-color: rgb(255, 255 ,255);
+    box-shadow: 0 4px 30px rgba(11,33,74,0.11);
+    border-radius: 3px;
+}
+
+#tableContainer::-webkit-scrollbar {
+    width: 5px;
+}
+
+#tableContainer::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(244, 244, 248);
+    border-radius: 10px;
+}
+
+#tableContainer::-webkit-scrollbar-thumb {
+    background: rgb(30, 30, 30);
+    border-radius: 5px;
+}
+
+tbody{
+    height:100%;
+    overflow-y:auto;
+    width: 100%;
+}
+
+.stickyColumn {
+    position: sticky;
+    top:-1px;
+}
+
+.btnTh {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(255, 255 ,255);
+}
+
+.btnTh:hover {
+    cursor: pointer;
+}
+
+.btnTh:focus {
+    outline: none;
+}
+
+.btnTh:active {
+    outline: none;
+}
+
+.material-icons {
+    padding: 0;
+    padding-right: 5px;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+#bg {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+#leftShadow {
+    z-index: 1;
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-right: 100vw solid transparent;
+    border-bottom: 35vh solid rgba(0, 0, 0, .01);
+    top: 64.75vh;
+    animation: 3s ease-out leftEaseIn;
+}
+
+#left {
+    z-index: 2;
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-right: 100vw solid transparent;
+    border-bottom: 35vh solid rgb(230, 230, 234);
+    top: 65vh;
+    -webkit-animation: 3s ease-out leftEaseIn;
+    -moz-animation: 3s ease-out leftEaseIn;
+    -ms-animation: 3s ease-out leftEaseIn;
+    -o-animation: 3s ease-out leftEaseIn;
+    animation: 3s ease-out leftEaseIn;
+}
+
+@keyframes leftEaseIn {
+    0% {
+        transform: translateX(-100%)
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
+
+#rightShadow {
+    z-index: 3;
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 100vw solid transparent;
+    border-bottom: 25vh solid rgba(25, 25, 25, .03);
+    top: 74.75vh;
+    animation: 3.5s ease-out rightEaseIn;
+}
+
+#right {
+    z-index: 4;
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 100vw solid transparent;
+    border-bottom: 25vh solid rgb(244, 244, 248);
+    top: 75vh;
+    animation: 3.5s ease-out rightEaseIn;
+}
+
+@keyframes rightEaseIn {
+    0% {
+        transform: translateX(100%)
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
+
+#landing {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#userCard {
+    z-index: 20;
+    position: absolute;
+    width: 350px;
+    height: auto;
+    margin: 10px;
+}
+
+.userProfilePicture {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
